@@ -34,7 +34,11 @@ function displayTemperature(response) {
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = response.data.temperature.humidity;
   windElement.innerHTML = response.data.wind.speed;
-  iconElement.innerHTML = response.data.condition.icon;
+  iconElement.setAttribute(
+    "src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+  );
+  iconElement.setAttribute("alt", response.data.condition.icon);
   dateElement.innerHTML = formatDate(response.data.time * 1000);
 }
 
