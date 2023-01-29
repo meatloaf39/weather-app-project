@@ -42,8 +42,18 @@ function displayTemperature(response) {
   dateElement.innerHTML = formatDate(response.data.time * 1000);
 }
 
-let apiKey = "c1f38f94a6e4f4305dd1o1359db76ata";
-let query = "Halmstad";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${query}&key=${apiKey}&units=metric`;
+function search(city) {
+  let apiKey = "c1f38f94a6e4f4305dd1o1359db76ata";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
 
-axios.get(apiUrl).then(displayTemperature);
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+
+search("Gothenburg");
+
+document.querySelector("#search-form").addEventListener("submit", handleSubmit);
