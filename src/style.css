@@ -55,3 +55,13 @@ li::first-letter {
   position: relative;
   font-size: 16px;
 }
+
+.weather-temperature a {
+  text-decoration: none;
+}
+
+.weather-temperature .active {
+  color: #000000;
+  cursor: default;
+  text-decoration: none;
+}
