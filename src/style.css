@@ -1,11 +1,5 @@
 body {
   font-family: arial, sans-serif;
-  background: linear-gradient(
-    to left,
-    rgb(92, 173, 226),
-    rgb(109, 213, 250),
-    rgb(255, 255, 255)
-  );
 }
 
 h1 {
@@ -39,9 +33,20 @@ hr {
   border-top: 2px double #5a5f60;
 }
 
+footer {
+  font-size: smaller;
+}
+
+.background {
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/065/545/original/davies-designs-studio-G-6kwVnClsE-unsplash.jpg?1675374055");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .app-wrap {
   max-width: 600px;
   margin: 30px auto;
+  backdrop-filter: blur(15px);
 }
 
 .weather-app {
